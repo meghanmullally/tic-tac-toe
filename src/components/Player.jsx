@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function Player({ initName, symbol }) {
 
-    const [currentPlayer, setCurrentPlayer] = useState(initName);
+    const [currentPlayerName, setCurrentPlayerName] = useState(initName);
     const [isEditing, setIsEditing] = useState(false);
 
     function handleEditClick() {
@@ -13,19 +13,20 @@ export default function Player({ initName, symbol }) {
     }
     
     function handleChange(event) {
-        setCurrentPlayer();
+    // hold the value the user tried to enter
+        setCurrentPlayerName(event.target.value);
     }
     
-    let editablePlayerName = <span className="player-name">{currentPlayer}</span>;
+    let editablePlayerName = <span className="player-name">{currentPlayerName}</span>;
 
     // if isEditing is true - then we will have an input field instead
     if(isEditing) {
-        editablePlayerName = <input type="text" required value={currentPlayer} onChange={handleChange}/>
+        editablePlayerName = <input type="text" required value={currentPlayerName} onChange={handleChange}/>
     } 
 
 
 
-
+    
     return (
         <li>
             <span className="player">
