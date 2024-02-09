@@ -10,7 +10,6 @@ function App() {
         <Player initName="Player 1" symbol="X" />
         <Player initName="Player 2" symbol="O" />
       </ol>
-
       <GameBoard />
     </div>
 
