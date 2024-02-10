@@ -10,12 +10,12 @@ export default function GameBoard({ onSelectSquare, turns }) {
     // deriving our gameboard from turns
     let gameBoard = initialGameBoard;
 
-    for(const turn of turns) {
+    for (const turn of turns) {
         const { square, player } = turn;
         const { row, col } = square;
 
         // update row and col with the player symbol - this is a dervied State.
-        gameBoard[row][col] = player; 
+        gameBoard[row][col] = player;
     }
 
 
@@ -40,8 +40,13 @@ export default function GameBoard({ onSelectSquare, turns }) {
                 <ol>
                     {row.map((playerSymbol, colIndex) => (
                         <li key={colIndex}>
-                        {/* passing rowIndex and colIndex as arguements - making sure data arriving and stored in app.js */}
-                            <button onClick={() => onSelectSquare(rowIndex, colIndex)}>{playerSymbol}</button>
+                            {/* passing rowIndex and colIndex as arguements - making sure data arriving and stored in app.js */}
+                            <button onClick={() => onSelectSquare(rowIndex, colIndex)}
+                                // disable button if symbol is x or o... if btn is null it will not be disabled
+                                disabled={playerSymbol !== null}
+                            >
+                                {playerSymbol}
+                            </button>
                         </li>
                     ))}
                 </ol>
