@@ -1,27 +1,38 @@
-import { useState } from "react";
-
 const initialGameBoard = [
     [null, null, null],
     [null, null, null],
     [null, null, null]
 ];
 
-export default function GameBoard({ onSelectSquare, activePlayerSymbol }) {
+export default function GameBoard({ onSelectSquare, turns }) {
 
-    const [gameBoard, setGameBoard] = useState(initialGameBoard);
+    // computed value that is dervied from state 
+    // deriving our gameboard from turns
+    let gameBoard = initialGameBoard;
 
-    // handle which row and colum and symbol was selected
-    function handleSelect(rowIndex, colIndex) {
-        setGameBoard((prevGameBoard) => {
+    for(const turn of turns) {
+        const { square, player } = turn;
+        const { row, col } = square;
 
-            // updated the state in a immuatable (unchanging over time or unable to be changed) way 
-            const updatedGameBoard = [...prevGameBoard.map(innerArray => [...innerArray])];
-            updatedGameBoard[rowIndex][colIndex] = activePlayerSymbol;
-            return updatedGameBoard;
-        });
-
-        onSelectSquare();
+        // update row and col with the player symbol - this is a dervied State.
+        gameBoard[row][col] = player; 
     }
+
+
+    // const [gameBoard, setGameBoard] = useState(initialGameBoard);
+
+    // // handle which row and colum and symbol was selected
+    // function handleSelect(rowIndex, colIndex) {
+    //     setGameBoard((prevGameBoard) => {
+
+    //         // updated the state in a immuatable (unchanging over time or unable to be changed) way 
+    //         const updatedGameBoard = [...prevGameBoard.map(innerArray => [...innerArray])];
+    //         updatedGameBoard[rowIndex][colIndex] = activePlayerSymbol;
+    //         return updatedGameBoard;
+    //     });
+
+    //     onSelectSquare();
+    // }
 
     return <ol id="game-board">
         {gameBoard.map((row, rowIndex) => (
@@ -29,7 +40,8 @@ export default function GameBoard({ onSelectSquare, activePlayerSymbol }) {
                 <ol>
                     {row.map((playerSymbol, colIndex) => (
                         <li key={colIndex}>
-                            <button onClick={() => handleSelect(rowIndex, colIndex)}>{playerSymbol}</button>
+                        {/* passing rowIndex and colIndex as arguements - making sure data arriving and stored in app.js */}
+                            <button onClick={() => onSelectSquare(rowIndex, colIndex)}>{playerSymbol}</button>
                         </li>
                     ))}
                 </ol>
