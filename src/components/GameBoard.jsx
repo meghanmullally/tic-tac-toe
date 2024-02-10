@@ -6,7 +6,7 @@ const initialGameBoard = [
     [null, null, null]
 ];
 
-export default function GameBoard() {
+export default function GameBoard({ onSelectSquare, activePlayerSymbol }) {
 
     const [gameBoard, setGameBoard] = useState(initialGameBoard);
 
@@ -14,11 +14,13 @@ export default function GameBoard() {
     function handleSelect(rowIndex, colIndex) {
         setGameBoard((prevGameBoard) => {
 
-            // updated the state in a immuatable way - 
+            // updated the state in a immuatable (unchanging over time or unable to be changed) way 
             const updatedGameBoard = [...prevGameBoard.map(innerArray => [...innerArray])];
-            updatedGameBoard[rowIndex][colIndex] = 'X';
+            updatedGameBoard[rowIndex][colIndex] = activePlayerSymbol;
             return updatedGameBoard;
         });
+
+        onSelectSquare();
     }
 
     return <ol id="game-board">
