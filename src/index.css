@@ -7,9 +7,7 @@
 html {
   font-family: 'Roboto Slab', sans-serif;
   line-height: 1.5;
-
-  color: #ebe7ef;
-
+  color: #292831; 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -20,13 +18,9 @@ html {
 body {
   background: radial-gradient(
       circle at top,
-      rgba(241, 210, 70, 0.98),
-      rgba(250, 176, 103, 0.87)
-    ),
-    url('bg-pattern-dark.png');
-  background-repeat: repeat;
-  background-size: 100% 100%, 30% 30%, 100% 100%;
-  min-height: 110rem;
+      #ee8695,
+      #4a7a96
+    );
 }
 
 header {
@@ -44,7 +38,7 @@ h1 {
   font-family: 'Caprasimo', cursive;
   font-size: 3rem;
   margin: 0 auto 3rem auto;
-  color: #3f3b00;
+  color: #333f58; 
 }
 
 #game-container {
@@ -52,7 +46,7 @@ h1 {
   margin: 3rem auto;
   padding: 2rem;
   border-radius: 6px;
-  background: linear-gradient(#383624, #282617);
+  background: linear-gradient(#4a7a96, #333f58, #292831); 
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   position: relative;
 }
@@ -75,20 +69,20 @@ h1 {
 }
 
 #players.highlight-player li.active {
-  border-color: #f6e35a;
+  border-color: #292831; 
   animation: pulse 2s infinite ease-in-out;
 }
 
 #players.highlight-player li.active .player-name,
 #players.highlight-player li.active .player-symbol {
-  color: #f6e35a;
+  color: #292831; 
 }
 
 #players button {
   width: 3rem;
   border: none;
   background: none;
-  color: #c3ba78;
+  color: #fbbbad; 
   font-size: 0.9rem;
   cursor: pointer;
   transition: color 0.2s;
@@ -97,7 +91,7 @@ h1 {
 }
 
 #players button:hover {
-  color: #f8ca31;
+  color: #4a7a96; 
 }
 
 .player {
@@ -111,7 +105,7 @@ h1 {
   display: inline-block;
   width: 10rem;
   font-size: 1rem;
-  color: #e1dec7;
+  color: #ee8695; 
   text-transform: uppercase;
   margin: 0;
   padding: 0.5rem;
@@ -127,7 +121,7 @@ h1 {
   border: none;
   padding: 0.5rem;
   animation: pulse-text 2s infinite;
-  background-color: #46432f;
+  background-color: #333f58; 
   text-align: center;
   text-transform: uppercase;
 }
@@ -135,7 +129,7 @@ h1 {
 .player-symbol {
   margin-left: 1rem;
   font-size: 1rem;
-  color: #e1dec7;
+  color: #ee8695; 
 }
 
 ol {
@@ -150,8 +144,8 @@ ol {
 
 #pre-game button {
   cursor: pointer;
-  background: none;
-  color: #f8c031;
+  background: #4a7a96; 
+  color: #292831; 
   border: none;
   font-family: 'Caprasimo', cursive;
   font-size: 4rem;
@@ -182,8 +176,8 @@ ol {
   width: 8rem;
   height: 8rem;
   border: none;
-  background: #aca788;
-  color: #3f3b00;
+  background: #4a7a96; 
+  color: #292831; 
   font-size: 5rem;
   cursor: pointer;
   font-family: 'Caprasimo', cursive;
@@ -200,7 +194,7 @@ ol {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(40, 38, 23, 0.95);
+  background-color: rgba(74, 89, 96, 0.95); 
   animation: pop-in 0.5s cubic-bezier(0.68, -0.55, 0.65, 0.52) forwards;
 }
 
@@ -208,14 +202,14 @@ ol {
   font-family: 'Caprasimo', cursive;
   font-size: 4rem;
   text-align: center;
-  color: #fcd256;
+  color: #fbbbad; 
   margin: 0;
 }
 
 #game-over p {
   font-size: 2rem;
   text-align: center;
-  color: #e1dec7;
+  color: #292831; 
 }
 
 #game-over button {
@@ -223,8 +217,8 @@ ol {
   margin: 0 auto;
   font-size: 1.5rem;
   background: none;
-  border: 2px solid #fcd256;
-  color: #fcd256;
+  border: 2px solid #fbbbad; 
+  color: #fbbbad; 
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
@@ -233,15 +227,15 @@ ol {
 }
 
 #game-over button:hover {
-  background: #fcd256;
-  color: #3f3b00;
+  background: #fbbbad; 
+  color: #292831; 
   transform: scale(1.1);
   box-shadow: 0 0 20px rgba(255, 187, 0, 0.8);
 }
 
 #log {
   max-width: 20rem;
-  color: #3f3b00;
+  color: #fbbbad; 
   list-style: none;
   margin: 2rem auto;
   padding: 0;
@@ -255,19 +249,20 @@ ol {
 }
 
 #log li.highlighted {
-  background-color: #3f3b00;
-  color: white;
+  background-color: #fbbbad; 
+  color: #333f58; 
 }
 
 #game-hints {
   text-align: center;
-  color: #46432f;
+  color: #4a7a96; 
 }
 
 #game-hints h2 {
   font-family: 'Caprasimo', cursive;
   font-size: 2rem;
   margin: 0;
+  color: #fbbbad; 
 }
 
 #game-hints ul {
@@ -280,7 +275,7 @@ ol {
   cursor: pointer;
   border: none;
   background: transparent;
-  color: #23221f;
+  color: #292831; 
   font: inherit;
   margin-top: 1.5rem;
 }
@@ -298,13 +293,13 @@ ol {
 
 @keyframes pulse-text {
   0% {
-    color: #e1dec7;
+    color: #ee8695; 
   }
   50% {
-    color: #9f9d83;
+    color: #99bd98; 
   }
   100% {
-    color: #e1dec7;
+    color: #ee8695; 
   }
 }
 
@@ -322,15 +317,15 @@ ol {
 
 @keyframes pulse {
   0% {
-    border-color: #f6e35a;
+    border-color: #fbbbad; 
     box-shadow: 0 0 0 0 rgba(246, 227, 90, 0.4);
   }
   50% {
-    border-color: #f8c031;
+    border-color: #4a7a96; 
     box-shadow: 0 0 0 0.5rem rgba(248, 165, 49, 0);
   }
   100% {
-    border-color: #f6e35a;
+    border-color: #fbbbad; 
     box-shadow: 0 0 0 0 rgba(246, 227, 90, 0);
   }
 }
