@@ -17,7 +17,7 @@ html {
 
 body {
   background: radial-gradient(
-      circle at top,
+      /* circle at top, */
       #ee8695,
       #4a7a96
     );
